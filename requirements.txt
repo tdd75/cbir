@@ -1,14 +1,8 @@
-# -*- coding: utf-8 -*-
-numpy
-torch
-torchvision
-sklearn
-yacs
-tqdm
-matplotlib
-selenium
-webdriver_manager
-bs4
-requests
-shopee-crawler
+scrapbook
+fastai==1.0.57
+shopee_crawler
 unidecode
+uvicorn
+fastapi
+pymongo
+pymongo[srv]

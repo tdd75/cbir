@@ -1,33 +1,5 @@
-# compilation and distribution
-__pycache__
-_ext
-*.pyc
-*.so
-detectron2.egg-info/
-build/
-dist/
-wheels/
-
-# pytorch/python/numpy formats
-*.pth
-*.pkl
-*.npy
-
-# ipython/jupyter notebooks
-*.ipynb
-**/.ipynb_checkpoints/
-
-# Editor temporaries
-*.swn
-*.swo
-*.swp
-*~
-
-# editor settings
-.idea
-.vscode
-
-.DS_Store
+*.jpg
 venv
-dataset/gallery
-dataset/query
+*.pkl
+services/*.json
+**/__pycache__

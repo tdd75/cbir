@@ -1,6 +1,0 @@
-numpy
-torch>=1.2
-torchvision>=0.4
-sklearn
-yacs
-tqdm

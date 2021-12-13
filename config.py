@@ -1,14 +1,16 @@
 import os
 from fastai.vision import models
 
-
 # Dataset
 data_root_dir = 'data/shopee'
 DATA_FINETUNE_PATH = os.path.join(data_root_dir, "train")
 DATA_RANKING_PATH = os.path.join(data_root_dir, "test")
-DATA_QUERY_PATH = os.path.join(data_root_dir, "query")
+DB_PATH = os.path.join(data_root_dir, "db")
+DATA_QUERY_PATH = 'query'
 
 # DNN configuration and learning parameters. Use more epochs to possibly improve accuracy.
+DATA_SIZE = 2000
+TEST_SIZE_RATE = 0.2
 EPOCHS_HEAD = 6  # 12
 EPOCHS_BODY = 6  # 12
 HEAD_LEARNING_RATE = 0.01

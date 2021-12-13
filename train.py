@@ -2,6 +2,8 @@ import random
 import math
 import torch.nn as nn
 import scrapbook as sb
+from IPython.core.debugger import set_trace
+
 import fastai
 from fastai.layers import FlattenedLoss
 from fastai.vision import (
@@ -18,8 +20,12 @@ from lib.utils_cv.similarity.model import compute_features_learner
 
 import config
 from model import EmbeddedFeatureWrapper, L2NormalizedLinearLayer, NormSoftmaxLoss
+from services import get_data
 
-def train_model(use_evaluate=True):
+import warnings
+warnings.filterwarnings("ignore")
+
+def train_model():
     random.seed(642)
     data_finetune = (
         ImageList.from_folder(config.DATA_FINETUNE_PATH)
@@ -63,9 +69,6 @@ def train_model(use_evaluate=True):
     learn.export('../../../export/export.pkl')
 
     # Evaluate model
-    if use_evaluate == False:
-        return
-        
     data_rank = (
         ImageList.from_folder(config.DATA_RANKING_PATH)
         .split_none()
@@ -120,5 +123,9 @@ def train_model(use_evaluate=True):
     # Log some outputs using scrapbook which are used during testing to verify correct notebook execution
     sb.glue("recallAt1", recallAt1)
 
-    ranks, mAP = evaluate(data_rank.train_ds, dnn_features, use_rerank=False)
-    ranks, mAP = evaluate(data_rank.train_ds, dnn_features, use_rerank=True)
+    evaluate(data_rank.train_ds, dnn_features, use_rerank=False)
+    evaluate(data_rank.train_ds, dnn_features, use_rerank=True)
+
+if __name__ == '__main__':
+    get_data.get_train_test()
+    train_model()

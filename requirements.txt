@@ -1,8 +1,11 @@
+pandas>=1.3.0
 scrapbook
 fastai==1.0.57
 shopee_crawler
 unidecode
 uvicorn
 fastapi
+python-multipart
 pymongo
 pymongo[srv]
+tqdm

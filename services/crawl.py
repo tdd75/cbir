@@ -32,5 +32,5 @@ if __name__ == '__main__':
                 'feature_vector': [],
             })
 
-    with open('./product.json', 'w', encoding='utf-8') as f:
+    with open('services/product.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False)

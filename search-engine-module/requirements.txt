@@ -1,0 +1,12 @@
+scrapbook
+fastai==1.0.57
+shopee_crawler
+unidecode
+uvicorn
+fastapi
+python-multipart
+pymongo
+pymongo[srv]
+tqdm
+pandas
+scikit-learn

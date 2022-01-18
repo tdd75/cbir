@@ -26,8 +26,8 @@ class _AuthScreenState extends State<AuthScreen>
     'displayName': '',
     'password': '',
   };
-  final _emailController = TextEditingController(text: 'duytd752@gmail.com');
-  final _passwordController = TextEditingController(text: '123456');
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   final _displayNameController = TextEditingController();
   final _repeatPasswordController = TextEditingController();
   var _isLoading = false;
@@ -82,14 +82,18 @@ class _AuthScreenState extends State<AuthScreen>
           _authData['email']!,
           _authData['password']!,
         );
+        Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
       } else {
         await Provider.of<Auth>(context, listen: false).signUp(
           _authData['email']!,
           _authData['displayName']!,
           _authData['password']!,
         );
+        _showErrorDialog('Create account successfully.');
+        setState(() {
+          _authMode = AuthMode.login;
+        });
       }
-      Navigator.of(context).popAndPushNamed(HomeScreen.routeName);
     } catch (error) {
       // const errorMessage =
       //     'Could not authenticate you. Please try again later.';

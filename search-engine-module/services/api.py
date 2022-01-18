@@ -36,7 +36,7 @@ async def query(file: UploadFile = File(...)):
 
 @app.get("/train")
 async def train():
-    # train_model()
+    train_model()
     return jsonable_encoder({
         'code': 200,
         'message': 'Train model successfully.'
@@ -45,7 +45,7 @@ async def train():
 
 @app.get("/update-feature")
 async def update_feature():
-    # update_featureVector()
+    update_featureVector()
     return jsonable_encoder({
         'code': 200,
         'message': 'Update feature vector successfully.'

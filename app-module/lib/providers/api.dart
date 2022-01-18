@@ -6,8 +6,8 @@ import 'package:async/async.dart';
 import 'package:path/path.dart';
 
 class Api {
-  static const String _serviceDomain = 'http://192.168.1.9:3000';
-  static const String _aiDomain = 'http://192.168.1.9:8000';
+  static const String _serviceDomain = 'http://192.168.1.10:3000';
+  static const String _aiDomain = 'http://192.168.1.10:8000';
 
   static Future<dynamic> login(String email, password) async {
     final url = Uri.parse('$_serviceDomain/login');
